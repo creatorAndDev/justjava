@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
+    /** variable int for counter method submitOrder*/
     int numberOfCoffees;
     public void submitOrder(View view) {
         display(++numberOfCoffees);
