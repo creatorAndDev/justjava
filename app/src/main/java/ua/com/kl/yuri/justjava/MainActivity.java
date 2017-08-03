@@ -40,7 +40,16 @@ public class MainActivity extends AppCompatActivity {
     }
     public void decrementOrder(View view) {
         display(--numberOfCoffees);
+//        decrementLimit(numberOfCoffees);
     }
+
+//    public void decrementLimit(int i){
+//        if (i <= 0) {
+//            display(i);
+//        } else if(i > 0){
+//            display(--i);
+//        }
+//    }
 
     /**
      * This method displays the given quantity value on the screen.
