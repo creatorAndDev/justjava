@@ -17,6 +17,7 @@
         android:textSize="18sp"/>
     
     <Button
+        android:onClick="incrementOrder"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
@@ -33,6 +34,7 @@
         android:textSize="16sp"/>
 
     <Button
+        android:onClick="decrementOrder"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
