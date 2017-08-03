@@ -29,38 +29,23 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     /** variable int for counter method submitOrder*/
-//    int numberOfCoffees;
+    int numberOfCoffees;
     public void submitOrder(View view) {
-        int numberOfCoffees = 0;
-
-        incrementOrder(++numberOfCoffees);
-        decrementOrder(--numberOfCoffees);
-
         display(numberOfCoffees);
         displayPrice(numberOfCoffees * 5);
-//        displayPrice(numberOfCoffees * 5);
+    }
+
+    public void incrementOrder(View view) {
+        display(++numberOfCoffees);
+    }
+    public void decrementOrder(View view) {
+        display(--numberOfCoffees);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
     private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
-    }
-
-    /**
-     * This method displays the given quantity value on the screen increment.
-     */
-    private void incrementOrder(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
-    }
-
-    /**
-     * This method displays the given quantity value on the screen decrement.
-     */
-    private void decrementOrder(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
