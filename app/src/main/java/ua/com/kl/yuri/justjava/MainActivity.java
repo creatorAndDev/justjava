@@ -18,6 +18,8 @@ import java.text.NumberFormat;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
+    //fields
+    int quantity = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +31,19 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     /** variable int for counter method submitOrder*/
-    int numberOfCoffees;
+
     public void submitOrder(View view) {
-        display(numberOfCoffees);
-        displayPrice(numberOfCoffees * 5);
+        display(quantity);
+        displayPrice(quantity * 5);
     }
 
     public void incrementOrder(View view) {
-        display(++numberOfCoffees);
+        quantity++;
+        display(quantity);
     }
     public void decrementOrder(View view) {
-        display(--numberOfCoffees);
-//        decrementLimit(numberOfCoffees);
+        quantity--;
+        display(quantity);
     }
 
 //    public void decrementLimit(int i){
