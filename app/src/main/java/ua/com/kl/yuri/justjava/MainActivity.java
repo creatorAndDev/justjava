@@ -19,7 +19,7 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
     //fields
-    int quantity = 2;
+    int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,17 +42,14 @@ public class MainActivity extends AppCompatActivity {
         display(quantity);
     }
     public void decrementOrder(View view) {
-        quantity--;
+        if(quantity == 0) {
+            this.quantity = 0;
+        } else {
+            this.quantity--;
+        }
+
         display(quantity);
     }
-
-//    public void decrementLimit(int i){
-//        if (i <= 0) {
-//            display(i);
-//        } else if(i > 0){
-//            display(--i);
-//        }
-//    }
 
     /**
      * This method displays the given quantity value on the screen.
