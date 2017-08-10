@@ -35,8 +35,12 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
 //        display(quantity);
 //        displayPrice(quantity * 5);
+
+        //fields local
         String priceMessage = "Total: $" + (quantity * 5);
-        displayMessage(priceMessage);
+        String textMessage = priceMessage + "\n" + "Thank you!";
+
+        displayMessage(textMessage);
     }
 
     public void incrementOrder(View view) {
