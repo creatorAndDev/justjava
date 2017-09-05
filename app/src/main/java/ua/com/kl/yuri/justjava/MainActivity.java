@@ -25,17 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        calculatePrice(5);
-    }
-
-    /**
-     * Calculates the price of the order.
-     *
-     * @param quantity is the number of cups of coffee ordered
-     */
-    private void calculatePrice(int quantity) {
-        int price = quantity * 5;
     }
 
     /**
@@ -52,7 +41,18 @@ public class MainActivity extends AppCompatActivity {
         String textMessage = priceMessage + "\n" + "Thank you!";
 
         displayMessage(textMessage);
+
+//        calculatePrice(10, 20);
     }
+
+    /**
+     * Calculates the price of the order.
+     *
+     * @param quantity is the number of cups of coffee ordered
+     */
+//    private void calculatePrice(int quantity, int number) {
+//        int price = quantity * 5;
+//    }
 
     public void incrementOrder(View view) {
         quantity++;
