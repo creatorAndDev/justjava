@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 
+import static android.R.attr.name;
+
 /**
  * This app displays an order form to order coffee.
  */
@@ -28,27 +30,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method is called when the order button is clicked.
-     */
-    /** variable int for counter method submitOrder*/
-
-    public void submitOrder(View view) {
-//        display(quantity);
-//        displayPrice(quantity * 5);
-
-        //fields local
-        String priceMessage = "Total: $" + (quantity * 5);
-        String textMessage = priceMessage + "\n" + "Thank you!";
-
-        displayMessage(textMessage);
-
-//        calculatePrice(10, 20);
-    }
-
-    /**
      * Calculates the price of the order.
      *
-     * @param quantity is the number of cups of coffee ordered
+     * @param --quantity is the number of cups of coffee ordered
      */
 //    private void calculatePrice(int quantity, int number) {
 //        int price = quantity * 5;
@@ -66,6 +50,32 @@ public class MainActivity extends AppCompatActivity {
         }
 
         display(quantity);
+    }
+
+    /** This method is name and quality
+     *
+     */
+//    public void submitOrderSummary() {
+//        String name = "My Name";
+//        String info = "Name: " + name + "\n" + "Quantity: " + quantity;
+//    }
+
+    /**
+     * This method is called when the order button is clicked.
+     */
+    /** variable int for counter method submitOrder*/
+
+    public void submitOrder(View view) {
+//        display(quantity);
+//        displayPrice(quantity * 5);
+
+        //fields local
+        String priceMessage = "Total: $" + (quantity * 5);
+        String textMessage = priceMessage + "\n" + "Thank you!" + "\n";
+
+        displayMessage(textMessage);
+
+//        calculatePrice(10, 20);
     }
 
     /**
