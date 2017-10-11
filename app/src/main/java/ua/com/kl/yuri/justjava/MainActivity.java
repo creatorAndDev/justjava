@@ -22,6 +22,7 @@ import static android.R.attr.name;
 public class MainActivity extends AppCompatActivity {
     //fields
     int quantity = 0;
+    String clientName = "Vasya";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
     /** This method is name and quality
      *
      */
-//    public void submitOrderSummary() {
-//        String name = "My Name";
-//        String info = "Name: " + name + "\n" + "Quantity: " + quantity;
-//    }
+    private String submitOrderSummary() {
+        String info = "Name: " + clientName + "\n" + "Quantity: " + quantity + "\n";
+
+        return info;
+    }
 
     /**
      * This method is called when the order button is clicked.
@@ -70,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
 //        displayPrice(quantity * 5);
 
         //fields local
-        String priceMessage = "Total: $" + (quantity * 5);
+        String infoSummary = submitOrderSummary();
+        String priceMessage = infoSummary + "Total: $" + (quantity * 5);
         String textMessage = priceMessage + "\n" + "Thank you!" + "\n";
 
         displayMessage(textMessage);
