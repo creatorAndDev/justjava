@@ -10,7 +10,10 @@ package ua.com.kl.yuri.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.text.NumberFormat;
 
@@ -89,4 +92,3 @@ public class MainActivity extends AppCompatActivity {
         TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(message);
     }
-}
