@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     /** variable int for counter method submitOrder*/
 
     public void submitOrder(View view) {
-        //fields local
+//      fields local
         String infoSummary = submitOrderSummary();
         String priceMessage = infoSummary + "Total: $" + (quantity * 5);
         String textMessage = priceMessage + "\n" + "Thank you!" + "\n";
