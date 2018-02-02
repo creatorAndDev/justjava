@@ -26,15 +26,40 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+    }
 
-        /**
-         * This CheckBox cream
-         */
-        CheckBox checkCream = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
-        if (checkCream.isChecked()) {
-            checkCream.setChecked(false);
-            Log.v("MainActivity", "Checkbox is:" + checkCream);
+    /**
+     * This CheckBox cream
+     */
+//    public boolean checkBoxCream(View view) {
+//        CheckBox checkCream = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
+//        boolean checkResult;
+//
+//        if (checkCream.isChecked()) {
+//            checkCream.setChecked(true);
+//
+//            checkResult = true;
+//            Log.v("MainActivity", "Checkbox is:" + checkResult);
+//
+//            return checkResult;
+//        } else {
+//            checkResult = false;
+//            Log.v("MainActivity", "Checkbox is:" + checkResult);
+//
+//            return checkResult;
+//        }
+//    }
+    public boolean checkedWippedCream(View view) {
+        CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
+        if(checkBox.isChecked()) {
+            checkBox.setChecked(true);
+            boolean hasWhippedCream  = true;
+            Log.v("MainActivity", "checkBox status is " + hasWhippedCream);
+            return hasWhippedCream;
         }
+
+        boolean hasWhippedCream  = false;
+        return hasWhippedCream;
     }
 
 
