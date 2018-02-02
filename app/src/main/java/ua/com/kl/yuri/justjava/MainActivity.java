@@ -10,20 +10,12 @@ package ua.com.kl.yuri.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.text.NumberFormat;
-
-import static android.R.attr.name;
 
 /**
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-    //fields
     int quantity = 0;
     String clientName = "Vasya";
 
@@ -43,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         quantity++;
         display(quantity);
     }
+
     public void decrementOrder(View view) {
-        if(quantity == 0) {
+        if (quantity == 0) {
             this.quantity = 0;
         } else {
             this.quantity--;
@@ -57,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
-    /** variable int for counter method submitOrder*/
+    /**
+     * variable int for counter method submitOrder
+     */
 
     public void submitOrder(View view) {
-//      fields local
         String infoSummary = submitOrderSummary();
         String priceMessage = infoSummary + "Total: $" + (quantity * 5);
         String textMessage = priceMessage + "\n" + "Thank you!" + "\n";
@@ -68,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
         displayMessage(textMessage);
     }
 
-    /** This method is name and quality
-     *
+    /**
+     * This method is name and quality
      */
     private String submitOrderSummary() {
         String info = "Name: " + clientName + "\n" + "Quantity: " + quantity + "\n";
@@ -92,3 +86,4 @@ public class MainActivity extends AppCompatActivity {
         TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(message);
     }
+}
