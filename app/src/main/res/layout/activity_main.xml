@@ -22,7 +22,7 @@
         android:paddingRight="16dp">
 
         <CheckBox
-            android:id="@+id/checkbox"
+            android:id="@+id/checkbox_whipped_cream"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"

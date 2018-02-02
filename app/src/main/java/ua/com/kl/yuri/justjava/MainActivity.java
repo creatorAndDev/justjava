@@ -9,7 +9,9 @@ package ua.com.kl.yuri.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 /**
@@ -22,8 +24,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+        /**
+         * This CheckBox cream
+         */
+        CheckBox checkCream = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
+        if (checkCream.isChecked()) {
+            checkCream.setChecked(false);
+            Log.v("MainActivity", "Checkbox is:" + checkCream);
+        }
     }
+
 
     /**
      * Calculates the price of the order.
