@@ -49,19 +49,24 @@ public class MainActivity extends AppCompatActivity {
 //            return checkResult;
 //        }
 //    }
-    public boolean checkedWippedCream(View view) {
+    public boolean buttonChoiceCream(View view) {
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
+        boolean hasWhippedCream;
+
         if(checkBox.isChecked()) {
-            checkBox.setChecked(true);
-            boolean hasWhippedCream  = true;
+//            checkBox.setChecked(true);
+
+            hasWhippedCream = true;
+            Log.v("MainActivity", "checkBox status is " + hasWhippedCream);
+            return hasWhippedCream;
+        } else {
+//            checkBox.setChecked(false);
+
+            hasWhippedCream = false;
             Log.v("MainActivity", "checkBox status is " + hasWhippedCream);
             return hasWhippedCream;
         }
-
-        boolean hasWhippedCream  = false;
-        return hasWhippedCream;
     }
-
 
     /**
      * Calculates the price of the order.

@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
             android:text="Whipped cream"
+            android:onClick="buttonChoiceCream"
             android:textSize="16sp"/>
 
     </LinearLayout>
