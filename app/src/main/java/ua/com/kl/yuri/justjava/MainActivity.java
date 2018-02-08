@@ -109,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is name and quality
      */
     private String submitOrderSummary() {
-        String info = "Name: " + clientName + "\n" + "Quantity: " + quantity + "\n";
+        Boolean hasWhippedCream = false;
+        String info = "Name: " + clientName + "\n" + "Added Whipped Cream " + hasWhippedCream + "\n" + "Quantity: " + quantity + "\n";
 
         return info;
     }
