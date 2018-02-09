@@ -31,27 +31,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This CheckBox cream
      */
-//    public boolean checkBoxCream(View view) {
-//        CheckBox checkCream = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
-//        boolean checkResult;
-//
-//        if (checkCream.isChecked()) {
-//            checkCream.setChecked(true);
-//
-//            checkResult = true;
-//            Log.v("MainActivity", "Checkbox is:" + checkResult);
-//
-//            return checkResult;
-//        } else {
-//            checkResult = false;
-//            Log.v("MainActivity", "Checkbox is:" + checkResult);
-//
-//            return checkResult;
-//        }
-//    }
+    boolean hasWhippedCream;
     public boolean buttonChoiceCream(View view) {
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
-        boolean hasWhippedCream;
 
         if(checkBox.isChecked()) {
 //            checkBox.setChecked(true);
@@ -109,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
      * This method is name and quality
      */
     private String submitOrderSummary() {
-        Boolean hasWhippedCream = false;
         String info = "Name: " + clientName + "\n" + "Added Whipped Cream " + hasWhippedCream + "\n" + "Quantity: " + quantity + "\n";
 
         return info;
