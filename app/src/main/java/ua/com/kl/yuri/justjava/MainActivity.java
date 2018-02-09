@@ -9,9 +9,11 @@ package ua.com.kl.yuri.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -19,13 +21,24 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
     int quantity = 0;
-    String clientName = "Vasya";
+    String clientName = "Empty";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+    }
+
+    /**
+     * This GetName field input
+     */
+    private String getName(){
+        EditText strName = (EditText) findViewById(R.id.input_name);
+        Editable getNameClient = strName.getText();
+        clientName = (String) getNameClient.toString();
+
+        return clientName;
     }
 
     /**
@@ -36,17 +49,36 @@ public class MainActivity extends AppCompatActivity {
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
 
         if(checkBox.isChecked()) {
-//            checkBox.setChecked(true);
 
             hasWhippedCream = true;
-            Log.v("MainActivity", "checkBox status is " + hasWhippedCream);
+//            Log.v("MainActivity", "checkBox status is " + hasWhippedCream);
             return hasWhippedCream;
+        } else {
+
+            hasWhippedCream = false;
+//            Log.v("MainActivity", "checkBox status is " + hasWhippedCream);
+            return hasWhippedCream;
+        }
+    }
+
+    /**
+     * This CheckBox chocolate
+     */
+    boolean hasChoco;
+    public boolean buttonChoiceChoco(View view) {
+        CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_chocolate);
+
+        if(checkBox.isChecked()) {
+
+            hasChoco = true;
+//            Log.v("MainActivity", "checkBox status is " + hasChoco);
+            return hasChoco;
         } else {
 //            checkBox.setChecked(false);
 
-            hasWhippedCream = false;
-            Log.v("MainActivity", "checkBox status is " + hasWhippedCream);
-            return hasWhippedCream;
+            hasChoco = false;
+//            Log.v("MainActivity", "checkBox status is " + hasChoco);
+            return hasChoco;
         }
     }
 
@@ -91,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is name and quality
      */
     private String submitOrderSummary() {
-        String info = "Name: " + clientName + "\n" + "Added Whipped Cream " + hasWhippedCream + "\n" + "Quantity: " + quantity + "\n";
+        String info = "Name: " + getName() + "\n" + "Added Whipped Cream " + hasWhippedCream + "\n" + "Added Chocolate " + hasChoco + "\n" + "Quantity: " + quantity + "\n";
 
         return info;
     }
