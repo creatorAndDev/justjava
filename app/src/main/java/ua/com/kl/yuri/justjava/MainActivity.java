@@ -21,6 +21,8 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
     int quantity = 0;
+    int selectWhippedCream = 0;
+    int selectChocolate = 0;
     String clientName = "No name";
 
     @Override
@@ -57,11 +59,13 @@ public class MainActivity extends AppCompatActivity {
         if(checkBox.isChecked()) {
 
             hasWhippedCream = true;
+            selectWhippedCream = 1;
 //            Log.v("MainActivity", "checkBox status is " + hasWhippedCream);
             return hasWhippedCream;
         } else {
 
             hasWhippedCream = false;
+            selectWhippedCream = 0;
 //            Log.v("MainActivity", "checkBox status is " + hasWhippedCream);
             return hasWhippedCream;
         }
@@ -77,12 +81,14 @@ public class MainActivity extends AppCompatActivity {
         if(checkBox.isChecked()) {
 
             hasChoco = true;
+            selectChocolate = 2;
 //            Log.v("MainActivity", "checkBox status is " + hasChoco);
             return hasChoco;
         } else {
 //            checkBox.setChecked(false);
 
             hasChoco = false;
+            selectChocolate = 0;
 //            Log.v("MainActivity", "checkBox status is " + hasChoco);
             return hasChoco;
         }
@@ -130,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         String infoSummary = submitOrderSummary();
-        String priceMessage = infoSummary + "Total: $" + (quantity * 5);
+        String priceMessage = infoSummary + "Total: $" + (quantity * 5 + selectWhippedCream + selectChocolate);
         String textMessage = priceMessage + "\n" + "Thank you!" + "\n";
 
         displayMessage(textMessage);
