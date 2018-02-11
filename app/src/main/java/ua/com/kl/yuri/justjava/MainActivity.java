@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * This app displays an order form to order coffee.
@@ -97,17 +98,31 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param --quantity is the number of cups of coffee ordered
      */
-    int quantity = 0;
+    int quantity = 1;
     public void incrementOrder(View view) {
-        quantity++;
+        //modals text
+        Toast modalIncrement = Toast.makeText(getApplicationContext(),
+                "Нельзя заказать кофе более 15 чашек", Toast.LENGTH_SHORT);
+
+        if (quantity == 15) {
+            this.quantity = 15;
+            modalIncrement.show();
+        } else {
+            this.quantity++;
+        }
 
         display(quantity);
         displayPricePreview(quantity);
     }
 
     public void decrementOrder(View view) {
-        if (quantity == 0) {
-            this.quantity = 0;
+        //modals text
+        Toast modalDecrement = Toast.makeText(getApplicationContext(),
+                "Нельзя заказать кофе менее 1 чашки", Toast.LENGTH_SHORT);
+
+        if (quantity == 1) {
+            this.quantity = 1;
+            modalDecrement.show();
         } else {
             this.quantity--;
         }
