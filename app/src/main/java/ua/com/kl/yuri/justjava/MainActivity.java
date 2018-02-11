@@ -21,7 +21,7 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
     int quantity = 0;
-    String clientName = "Empty";
+    String clientName = "No name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,13 @@ public class MainActivity extends AppCompatActivity {
      */
     private String getName(){
         EditText strName = (EditText) findViewById(R.id.input_name);
-        Editable getNameClient = strName.getText();
-        clientName = (String) getNameClient.toString();
+
+        if (strName.getText().length() == 0) {
+            clientName = "No name";
+        } else {
+            Editable getNameClient = strName.getText();
+            clientName = (String) getNameClient.toString();
+        }
 
         return clientName;
     }
@@ -90,7 +95,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void incrementOrder(View view) {
         quantity++;
+
         display(quantity);
+        displayPricePreview(quantity);
     }
 
     public void decrementOrder(View view) {
@@ -101,6 +108,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         display(quantity);
+        displayPricePreview(quantity);
+    }
+
+    /**
+     * This method is called when the order button is clicked + or -.
+     */
+    private void displayPricePreview(int number) {
+        TextView priceView = (TextView) findViewById(R.id.price_view);
+        priceView.setText("" + (number * 5));
     }
 
 
