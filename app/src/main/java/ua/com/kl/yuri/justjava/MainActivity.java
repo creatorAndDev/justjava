@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This CheckBox cream
      */
+
     boolean hasWhippedCream;
     public boolean buttonChoiceCream(View view) {
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
