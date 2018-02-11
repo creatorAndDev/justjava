@@ -20,10 +20,6 @@ import android.widget.TextView;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-    int quantity = 0;
-    int selectWhippedCream = 0;
-    int selectChocolate = 0;
-    String clientName = "No name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This GetName field input
      */
+    String clientName = "No name";
     private String getName(){
         EditText strName = (EditText) findViewById(R.id.input_name);
 
@@ -51,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This CheckBox cream
      */
-
     boolean hasWhippedCream;
+    int selectWhippedCream = 0;
     public boolean buttonChoiceCream(View view) {
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
 
@@ -75,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
      * This CheckBox chocolate
      */
     boolean hasChoco;
+    int selectChocolate = 0;
     public boolean buttonChoiceChoco(View view) {
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_chocolate);
 
@@ -99,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param --quantity is the number of cups of coffee ordered
      */
-
+    int quantity = 0;
     public void incrementOrder(View view) {
         quantity++;
 
