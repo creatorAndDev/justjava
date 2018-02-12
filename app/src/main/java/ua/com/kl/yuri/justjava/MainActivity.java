@@ -7,6 +7,8 @@
  */
 package ua.com.kl.yuri.justjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -102,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     public void incrementOrder(View view) {
         //modals text
         Toast modalIncrement = Toast.makeText(getApplicationContext(),
-                "Нельзя заказать кофе более 15 чашек", Toast.LENGTH_SHORT);
+                "Извините, но кофе на всех не хватит! :) Нельзя заказать более 15 чашек!", Toast.LENGTH_SHORT);
 
         if (quantity == 15) {
             this.quantity = 15;
@@ -118,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     public void decrementOrder(View view) {
         //modals text
         Toast modalDecrement = Toast.makeText(getApplicationContext(),
-                "Нельзя заказать кофе менее 1 чашки", Toast.LENGTH_SHORT);
+                "Извините, но нельзя заказать кофе менее 1 чашки!", Toast.LENGTH_SHORT);
 
         if (quantity == 1) {
             this.quantity = 1;
@@ -151,8 +153,22 @@ public class MainActivity extends AppCompatActivity {
         String infoSummary = submitOrderSummary();
         String priceMessage = infoSummary + "Total: $" + (quantity * 5 + selectWhippedCream + selectChocolate);
         String textMessage = priceMessage + "\n" + "Thank you!" + "\n";
+//
+//        displayMessage(textMessage);
 
-        displayMessage(textMessage);
+        /** Intent Email **/
+        Intent intent = new Intent();
+
+        intent.setAction(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+
+        intent.putExtra(Intent.EXTRA_EMAIL, "wimg.markup@gmail.com");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Theme: Testing my app");
+        intent.putExtra(Intent.EXTRA_TEXT, textMessage);
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     /**
@@ -175,8 +191,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given text on the screen.
      */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
+//    private void displayMessage(String message) {
+//        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+//        orderSummaryTextView.setText(message);
+//    }
 }
