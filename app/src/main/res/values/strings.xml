@@ -1,3 +1,56 @@
 <resources>
-    <string name="app_name">Just Java</string>
+	<!-- Name app -->
+	<string name="app_name">Just Java</string>
+
+	<!-- Check list of toppings [Char limit=20] -->
+	<string name="topping">Topping:</string>
+
+	<!-- Field EditText placeholder for enter name -->
+	<string name="your_name">Your name</string>
+
+	<!-- Whipped cream -->
+	<string name="whipped_cream">Whipped cream</string>
+
+	<!-- Chocolate -->
+	<string name="chocolate">Chocolate</string>
+	
+	<!-- Quantity is: -->
+	<string name="quantity_is">Quantity is:</string>
+
+	<!-- Price preview -->
+	<string name="price_preview">Price preview:</string>
+
+	<!-- Order -->
+	<string name="order">Order</string>
+
+	<!-- // -->
+	<!-- IN CLASS MainActivity -->
+
+	<!-- Theme: Testing my app -->
+	<string name="theme_mail">Theme: Testing my app</string>
+
+	<!-- name -->
+	<string name="name">Name:</string>
+	
+	<!-- Added Whipped Cream -->
+	<string name="added_whipped_cream">Added: Whipped Cream </string>
+	
+	<!-- Added Chocolate -->
+	<string name="added_chocolate">Added: Chocolate </string>
+
+	<!-- Quantity -->
+	<string name="quantity">Quantity:</string>
+	
+	<!-- Total: $ -->
+	<string name="total_m">Total: $</string>
+
+	<!-- Thank you! -->
+	<string name="thank_you">Thank you!</string>
+
+	<!-- Toast modal min -->
+	<string name="toast_modal_min">Sorry, but you can not order coffee less than 1 cup!</string>
+	
+	<!-- Toast modal max -->
+	<string name="toast_modal_max">Sorry, but coffee is not enough for everyone! :) You can not order more than 15 cups!</string>
+
 </resources>

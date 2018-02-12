@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     public void incrementOrder(View view) {
         //modals text
         Toast modalIncrement = Toast.makeText(getApplicationContext(),
-                "Извините, но кофе на всех не хватит! :) Нельзя заказать более 15 чашек!", Toast.LENGTH_SHORT);
+                getString(R.string.toast_modal_max), Toast.LENGTH_SHORT);
 
         if (quantity == 15) {
             this.quantity = 15;
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     public void decrementOrder(View view) {
         //modals text
         Toast modalDecrement = Toast.makeText(getApplicationContext(),
-                "Извините, но нельзя заказать кофе менее 1 чашки!", Toast.LENGTH_SHORT);
+                getString(R.string.toast_modal_min), Toast.LENGTH_SHORT);
 
         if (quantity == 1) {
             this.quantity = 1;
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void displayPricePreview(int number) {
         TextView priceView = (TextView) findViewById(R.id.price_view);
-        priceView.setText("" + (number * 5));
+        priceView.setText(" " + (number * 5));
     }
 
 
@@ -148,11 +148,13 @@ public class MainActivity extends AppCompatActivity {
     /**
      * variable int for counter method submitOrder
      */
+    /**
+     * getString(R.string.name attr for text)*/
 
     public void submitOrder(View view) {
         String infoSummary = submitOrderSummary();
-        String priceMessage = infoSummary + "Total: $" + (quantity * 5 + selectWhippedCream + selectChocolate);
-        String textMessage = priceMessage + "\n" + "Thank you!" + "\n";
+        String priceMessage = infoSummary + getString(R.string.total_m) + (quantity * 5 + selectWhippedCream + selectChocolate);
+        String textMessage = priceMessage + "\n" + getString(R.string.thank_you) + "\n";
 //
 //        displayMessage(textMessage);
 
@@ -163,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setType("text/plain");
 
         intent.putExtra(Intent.EXTRA_EMAIL, "wimg.markup@gmail.com");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Theme: Testing my app");
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.theme_mail));
         intent.putExtra(Intent.EXTRA_TEXT, textMessage);
 
         if (intent.resolveActivity(getPackageManager()) != null) {
@@ -175,7 +177,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is name and quality
      */
     private String submitOrderSummary() {
-        String info = "Name: " + getName() + "\n" + "Added Whipped Cream " + hasWhippedCream + "\n" + "Added Chocolate " + hasChoco + "\n" + "Quantity: " + quantity + "\n";
+        String info = getString(R.string.name) + " " + getName() +
+                "\n" + getString(R.string.added_whipped_cream) + " " + hasWhippedCream +
+                "\n" + getString(R.string.added_chocolate) + " " + hasChoco +
+                "\n" + getString(R.string.quantity) + " " + quantity +
+                "\n";
 
         return info;
     }
