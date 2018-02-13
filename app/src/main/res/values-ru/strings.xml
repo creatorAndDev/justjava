@@ -1,0 +1,55 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- Имя приложения -->
+	<string name="app_name">Просто Java</string>
+
+	<!-- Чекет лист топинг листа [Char limit=20] -->
+	<string name="topping">Топпинг:</string>
+
+	<!-- Поле EditText placeholder для ввода имени -->
+	<string name="your_name">Ваше имя</string>
+
+	<!-- Взбитые сливки -->
+	<string name="whipped_cream">Взбитые сливки</string>
+
+	<!-- Шоколад -->
+	<string name="chocolate">Шоколад</string>
+
+	<!-- Количество: -->
+	<string name="quantity_is">Количество:</string>
+
+	<!-- Предпросмотр цены -->
+	<string name="price_preview">Предпросмотр цены:</string>
+
+	<!-- Заказать -->
+	<string name="order">Заказать</string>
+
+	<!-- // -->
+	<!-- В КЛАССЕ MainActivity -->
+
+	<!-- Тема: Тестирование моего приложения -->
+	<string name="theme_mail">Тема: Тестирование моего приложения</string>
+
+	<!-- Имя -->
+	<string name="order_summary_name">Имя: <xliff:g id="name" example="Эми">%s</xliff:g></string>
+
+	<!-- Добавлено: Взбитые сливки -->
+	<string name="added_whipped_cream">Добавлено: Взбитые сливки </string>
+	
+	<!-- Добавлено: Шоколад -->
+	<string name="added_chocolate">Добавлено: Шоколад </string>
+
+	<!-- Количество -->
+	<string name="quantity">Количество:</string>
+
+	<!-- Счет: $ -->
+	<string name="total_m">Счет: $</string>
+
+	<!-- Cпасибо! -->
+	<string name="thank_you">Спасибо!</string>
+
+	<!-- Toast modal min -->
+	<string name="toast_modal_min">Извините, но нельзя заказать кофе менее 1 чашки!</string>
+	
+	<!-- Toast modal max -->
+	<string name="toast_modal_max">Извините, но кофе на всех не хватит! :) Нельзя заказать более 15 чашек!</string>
+</resources>
