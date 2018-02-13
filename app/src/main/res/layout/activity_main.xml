@@ -1,42 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:descendantFocusability="beforeDescendants"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:orientation="vertical"
         tools:context="ua.com.kl.yuri.justjava.MainActivity">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:focusable="true"
             android:focusableInTouchMode="true"
+            android:orientation="horizontal"
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
+
             <EditText
                 android:id="@+id/input_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/your_name"
-                android:textSize="18sp"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HeaderTextStyle"
             android:padding="16dp"
-            android:text="@string/topping"
-            android:textSize="20sp"
-            android:textAllCaps="true"/>
+            android:text="@string/topping" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,10 +46,10 @@
                 android:id="@+id/checkbox_whipped_cream"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="buttonChoiceCream"
                 android:paddingLeft="6dp"
                 android:text="@string/whipped_cream"
-                android:onClick="buttonChoiceCream"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -67,20 +64,17 @@
                 android:id="@+id/checkbox_chocolate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="buttonChoiceChoco"
                 android:paddingLeft="6dp"
                 android:text="@string/chocolate"
-                android:onClick="buttonChoiceChoco"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/HeaderTextStyle"
             android:padding="16dp"
-            android:text="@string/quantity_is"
-            android:textSize="20sp"
-            android:textAllCaps="true"/>
+            android:text="@string/quantity_is" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -94,7 +88,7 @@
                 android:layout_height="48dp"
                 android:onClick="decrementOrder"
                 android:text="-"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/quantity_text_view"
@@ -104,20 +98,21 @@
                 android:paddingRight="32dp"
                 android:text="1"
                 android:textAlignment="center"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <Button
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:onClick="incrementOrder"
                 android:text="+"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="8dp"
+            android:orientation="horizontal"
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
@@ -125,46 +120,46 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/price_preview"
-                android:textSize="16sp"
+                android:textAllCaps="false"
                 android:textColor="#b2b0b0"
-                android:textAllCaps="false"/>
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/price_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" 5"
-                android:textSize="16sp"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" $"
-                android:textSize="16sp"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="24dp"-->
-            <!--android:paddingLeft="16dp"-->
-            <!--android:paddingRight="16dp"-->
-            <!--android:text="Order summary:"-->
-            <!--android:textSize="20sp"-->
-            <!--android:textAllCaps="true" />-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="24dp"-->
+        <!--android:paddingLeft="16dp"-->
+        <!--android:paddingRight="16dp"-->
+        <!--android:text="Order summary:"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textAllCaps="true" />-->
 
         <!--<TextView-->
-            <!--android:id="@+id/order_summary_text_view"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="16dp"-->
-            <!--android:paddingLeft="16dp"-->
-            <!--android:paddingRight="16dp"-->
-            <!--android:text="$ 0.00"-->
-            <!--android:textSize="18sp"-->
-            <!--android:textStyle="bold"/>-->
+        <!--android:id="@+id/order_summary_text_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="16dp"-->
+        <!--android:paddingLeft="16dp"-->
+        <!--android:paddingRight="16dp"-->
+        <!--android:text="$ 0.00"-->
+        <!--android:textSize="18sp"-->
+        <!--android:textStyle="bold"/>-->
 
         <Button
             android:layout_width="wrap_content"
@@ -176,6 +171,6 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:text="@string/order"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
     </LinearLayout>
 </ScrollView>
