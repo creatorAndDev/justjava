@@ -34,18 +34,18 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This GetName field input
      */
-    String clientName = "No name";
-    private String getName(){
+    String orderSummaryName = "No name";
+    private String getSummaryName(){
         EditText strName = (EditText) findViewById(R.id.input_name);
 
         if (strName.getText().length() == 0) {
-            clientName = "No name";
+            orderSummaryName = "No name";
         } else {
-            Editable getNameClient = strName.getText();
-            clientName = (String) getNameClient.toString();
+            Editable getOrderSummaryName = strName.getText();
+            orderSummaryName = getOrderSummaryName.toString();
         }
 
-        return clientName;
+        return orderSummaryName;
     }
 
     /**
@@ -177,7 +177,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is name and quality
      */
     private String submitOrderSummary() {
-        String info = getString(R.string.name) + " " + getName() +
+        String name = getSummaryName();
+        String info = getString(R.string.order_summary_name, name) +
                 "\n" + getString(R.string.added_whipped_cream) + " " + hasWhippedCream +
                 "\n" + getString(R.string.added_chocolate) + " " + hasChoco +
                 "\n" + getString(R.string.quantity) + " " + quantity +

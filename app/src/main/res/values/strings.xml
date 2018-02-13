@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 	<!-- Name app -->
 	<string name="app_name">Just Java</string>
 
@@ -30,7 +30,8 @@
 	<string name="theme_mail">Theme: Testing my app</string>
 
 	<!-- name -->
-	<string name="name">Name:</string>
+	<!-- строчное место для переменной %s-->
+	<string name="order_summary_name">Name: <xliff:g id="name" example="Amy">%s</xliff:g></string>
 	
 	<!-- Added Whipped Cream -->
 	<string name="added_whipped_cream">Added: Whipped Cream </string>
